@@ -48,12 +48,19 @@ type Product = {
   specs: string[]
 }
 
+async function getProductById(id: string) {
+  // Replace with your actual fetch logic
+  const response = await fetch(`/api/products/${id}`);
+  if (!response.ok) throw new Error('Product not found');
+  return response.json();
+}
+
 type ProductDetailPageProps = {
   params: { id: string }
 }
 
 export default async function Page({ params }: ProductDetailPageProps) {
-  const product = products[params.id]
+  const product = await getProductById(params.id);
 
   if (!product) {
     notFound()
