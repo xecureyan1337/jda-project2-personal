@@ -48,13 +48,13 @@ const products: { [key: string]: Product } = {
   },
 }
 
-
-type ProductDetailPageProps = {
-  params: { id: string }
+// Best practice: use generateStaticParams for SSG
+export async function generateStaticParams() {
+  return Object.keys(products).map(id => ({ id }))
 }
 
-export default function Page({ params }: ProductDetailPageProps) {
-  const product = products[params.id];
+export default function Page({ params }: { params: { id: string } }) {
+  const product = products[params.id]
 
   if (!product) {
     notFound()
