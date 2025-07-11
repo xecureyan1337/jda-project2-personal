@@ -47,13 +47,18 @@ type Product = {
   specs: string[]
 }
 
-// type ProductDetailProps = {
-//   params: { id: string }
-// }
+// Best practice: use async function and type params
+export async function generateStaticParams() {
+  return Object.keys(products).map(id => ({ id }))
+}
 
-export default function ProductDetail({ params }: { params: { id: string } }) {
+type ProductDetailPageProps = {
+  params: { id: string }
+}
+
+export default function ProductDetail({ params }: ProductDetailPageProps) {
   const product = products[params.id]
-  
+
   if (!product) {
     return (
       <div className="container mx-auto p-8">
