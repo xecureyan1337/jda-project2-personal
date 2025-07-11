@@ -47,16 +47,11 @@ type Product = {
   specs: string[]
 }
 
-// Best practice: use async function and type params
-export async function generateStaticParams() {
-  return Object.keys(products).map(id => ({ id }))
-}
-
 type ProductDetailPageProps = {
   params: { id: string }
 }
 
-export default function ProductDetail({ params }: ProductDetailPageProps) {
+export default async function ProductDetail({ params }: ProductDetailPageProps) {
   const product = products[params.id]
 
   if (!product) {
