@@ -1,4 +1,5 @@
 import Link from 'next/link'
+import { notFound } from 'next/navigation'
 
 // Data dummy untuk products
 const products: { [key: string]: Product } = {
@@ -47,22 +48,15 @@ type Product = {
   specs: string[]
 }
 
-// type ProductDetailPageProps = {
-//   params: { id: string }
-// }
+type ProductDetailPageProps = {
+  params: { id: string }
+}
 
-export default async function ProductDetail({ params }: { params: { id: string } }) {
+export default async function Page({ params }: ProductDetailPageProps) {
   const product = products[params.id]
 
   if (!product) {
-    return (
-      <div className="container mx-auto p-8">
-        <div className="text-center">
-          <h1 className="text-3xl font-bold text-red-600 mb-4">Product Not Found</h1>
-          <p className="text-gray-600 mb-4">Produk yang Anda cari tidak ditemukan.</p>
-        </div>
-      </div>
-    )
+    notFound()
   }
 
   return (
