@@ -1,6 +1,14 @@
 import Link from 'next/link'
 import { notFound } from 'next/navigation'
 
+type Product = {
+  name: string
+  description: string
+  price: string
+  image: string
+  specs: string[]
+}
+
 // Data dummy untuk products
 const products: { [key: string]: Product } = {
   1: {
@@ -40,19 +48,12 @@ const products: { [key: string]: Product } = {
   },
 }
 
-type Product = {
-  name: string
-  description: string
-  price: string
-  image: string
-  specs: string[]
-}
 
 type ProductDetailPageProps = {
   params: { id: string }
 }
 
-export default async function Page({ params }: ProductDetailPageProps) {
+export default function Page({ params }: ProductDetailPageProps) {
   const product = products[params.id];
 
   if (!product) {
