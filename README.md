@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# My Next.js Website
 
-## Getting Started
+Project Next.js untuk mempelajari dasar-dasar routing, static pages, dan dynamic routes.
 
-First, run the development server:
+## 🚀 Fitur
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+- ✅ **Halaman Statis**: Home, About, Profile, Contact
+- ✅ **Dynamic Routes**: Products dengan parameter ID
+- ✅ **Navigasi**: Menu navigasi yang responsive
+- ✅ **404 Page**: Halaman error yang custom dan menarik
+- ✅ **Responsive Design**: Menggunakan Tailwind CSS
+- ✅ **SEO Optimized**: Metadata untuk setiap halaman
+
+## 📁 Struktur Project
+
+```
+src/
+├── app/
+│   ├── about/page.js          # Halaman About
+│   ├── contact/page.js        # Halaman Contact
+│   ├── profile/page.js        # Halaman Profile
+│   ├── products/[id]/page.js  # Dynamic route untuk products
+│   ├── globals.css            # Global styles
+│   ├── layout.js              # Root layout
+│   ├── loading.js             # Loading state
+│   ├── not-found.js           # 404 page
+│   └── page.js                # Home page
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## 🛠️ Teknologi yang Digunakan
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js** - React framework dengan App Router
+- **Tailwind CSS** - Utility-first CSS framework
+- **React** - JavaScript library untuk UI
+- **JavaScript** - Programming language
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## 🏃‍♂️ Cara Menjalankan
 
-## Learn More
+### Prerequisites
+- Node.js (versi 18 atau lebih tinggi). Dipakai versi v22.16.0
+- npm / pnpm
 
-To learn more about Next.js, take a look at the following resources:
+### Instalasi
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+1. Clone repository:
+```bash
+git clone [URL_REPOSITORY]
+cd my-nextjs-project
+```
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+2. Install dependencies:
+```bash
+pnpm install
+```
 
-## Deploy on Vercel
+3. Jalankan development server:
+```bash
+pnpm run dev
+```
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+4. Buka browser dan kunjungi `http://localhost:3000`
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## 📄 Halaman yang Tersedia
+
+| Route | Deskripsi |
+|-------|-----------|
+| `/` | Halaman utama dengan overview |
+| `/about` | Informasi tentang pembelajaran |
+| `/profile` | Profil personal |
+| `/contact` | Informasi kontak dan form |
+| `/products/[id]` | Detail produk berdasarkan ID |
+
+## 🎨 Fitur UI/UX
+
+- **Responsive Design**: Bekerja di desktop dan mobile
+- **Smooth Navigation**: Navigasi tanpa reload halaman
+- **Interactive Elements**: Hover effects dan transitions
+- **Error Handling**: 404 page yang user-friendly
+- **Loading States**: Feedback visual saat loading
+
+## 🔗 Dynamic Routes
+
+Project ini menggunakan dynamic routes untuk halaman products:
+- Route pattern: `/products/[id]`
+- Contoh: `/products/1`, `/products/2`, dll.
+- Handle invalid IDs dengan error message yang sesuai
+
+## 📱 Responsive Breakpoints
+
+- **Mobile**: < 768px
+- **Tablet**: 768px - 1024px
+- **Desktop**: > 1024px
+
+## 🎯 Pembelajaran
+
+Melalui project ini, saya mempelajari:
+
+1. **Next.js App Router**: Struktur routing modern
+2. **Static Pages**: Membuat halaman statis
+3. **Dynamic Routes**: Routing dengan parameter
+4. **Component Navigation**: Navigasi antar halaman
+5. **Error Handling**: Custom 404 page
+6. **Styling**: Tailwind CSS untuk responsive design
+7. **SEO**: Metadata dan optimasi search engine
+
+**Note**: Ini adalah project pembelajaran yang ditujukan untuk memahami dasar-dasar Next.js routing dan navigation.
