@@ -47,11 +47,11 @@ type Product = {
   specs: string[]
 }
 
-type ProductDetailPageProps = {
-  params: { id: string }
-}
+// type ProductDetailPageProps = {
+//   params: { id: string }
+// }
 
-export default async function ProductDetail({ params }: ProductDetailPageProps) {
+export default async function ProductDetail({ params }: { params: { id: string } }) {
   const product = products[params.id]
 
   if (!product) {
